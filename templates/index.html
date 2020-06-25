@@ -23,7 +23,7 @@
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       $(function () {
-        var socket = io.connect('https://sockbot.azurewebsites.net:443',{ transports: ['websocket']});
+        var socket = io.connect('https://sockbot.azurewebsites.net:443',{ transports: ['websocket'],upgrade:false});
         $('form').submit(function(){
           socket.emit('chat message', $('#m').val());
           console.log("emitted event");
